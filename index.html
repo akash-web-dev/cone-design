@@ -19,6 +19,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
       :root {
+        --font-sans: "Inter", sans-serif;
         --primary: #722f37;
         --primary-d: #5a242c;
         --primary-xl: #f8f0f1;
@@ -49,7 +50,7 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         background: var(--bg);
         color: var(--text);
         display: flex;
@@ -74,7 +75,7 @@
       }
 
       .logo {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 1.6rem;
         font-weight: 700;
         letter-spacing: 4px;
@@ -87,7 +88,7 @@
         color: rgba(255, 255, 255, 0.42);
         text-transform: capitalize;
         margin-top: 2px;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
       }
 
       .menu-section {
@@ -101,7 +102,7 @@
         margin-bottom: 10px;
         text-transform: capitalize;
         color: rgba(255, 255, 255, 0.3);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
       }
 
       .menu-item {
@@ -158,12 +159,12 @@
 
         color: rgba(255, 255, 255, 0.38);
         text-transform: capitalize;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         margin-bottom: 10px;
       }
 
       .signal-value {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 1.15rem;
         color: #fff;
         display: flex;
@@ -222,7 +223,7 @@
       }
 
       .breadcrumb {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 1.05rem;
         font-weight: 600;
         letter-spacing: 1px;
@@ -233,7 +234,7 @@
         padding: 5px 8px;
         border-radius: 20px;
         font-size: 0.6rem;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         letter-spacing: 1px;
       }
 
@@ -244,7 +245,7 @@
         gap: 7px;
         padding: 5px 13px;
         border-radius: 30px;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 1.5px;
@@ -299,7 +300,7 @@
       }
 
       #liveTime {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 0.72rem;
         opacity: 0.78;
         letter-spacing: 0.7px;
@@ -374,11 +375,11 @@
         letter-spacing: 1.3px;
         text-transform: capitalize;
         color: var(--muted);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
       }
 
       .metric-val {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 0.95rem;
         font-weight: 500;
         color: var(--text);
@@ -533,7 +534,7 @@
       }
 
       .cam-tag {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 0.63rem;
         color: rgba(255, 255, 255, 0.62);
       }
@@ -542,7 +543,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 0.62rem;
         color: #f87171;
         letter-spacing: 1.5px;
@@ -587,7 +588,7 @@
 
         text-transform: capitalize;
         color: #b0b8c4;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         margin-bottom: 9px;
       }
 
@@ -608,7 +609,7 @@
         justify-content: center;
         gap: 6px;
         transition: all 0.18s;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-weight: 700;
 
         position: relative;
@@ -628,7 +629,7 @@
       .btn-main .btn-hint {
         font-size: 0.6rem;
         opacity: 0.75;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-weight: 400;
         letter-spacing: 0.3px;
       }
@@ -686,7 +687,7 @@
         letter-spacing: 1.5px;
         text-transform: capitalize;
         color: var(--muted);
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         display: flex;
         align-items: center;
         gap: 5px;
@@ -704,7 +705,7 @@
       select {
         padding: 7px 28px 7px 9px;
         font-size: 0.82rem;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         border: 1.5px solid var(--border);
         border-radius: 7px;
         background: white;
@@ -753,7 +754,7 @@
         width: 50%;
       }
       .info-table .v {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         font-size: 0.7rem;
         color: var(--text);
         text-align: right;
@@ -770,7 +771,7 @@
         padding: 7px 0;
         font-size: 0.78rem;
         font-weight: 600;
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-sans);
         border-radius: 7px;
         cursor: pointer;
         transition: all 0.15s;
