@@ -59,7 +59,6 @@
         font-size: 13px;
       }
 
-      /* ══ SIDEBAR ══ */
       aside {
         width: 180px;
         flex-shrink: 0;
@@ -87,34 +86,28 @@
         padding: 2px;
       }
       .logo {
-        font-family: var(--font-sans);
         font-size: 1.6rem;
         font-weight: 700;
         letter-spacing: 4px;
         line-height: 1;
       }
-
       .logo-sub {
         font-size: 0.56rem;
-
         color: rgba(255, 255, 255, 0.42);
         text-transform: capitalize;
         margin-top: 2px;
-        font-family: var(--font-sans);
       }
 
       .menu-section {
         padding: 8px 0;
         flex: 1;
       }
-
       .menu-label {
         padding: 5px 13px 2px;
         font-size: 0.54rem;
         margin-bottom: 10px;
         text-transform: capitalize;
         color: rgba(255, 255, 255, 0.3);
-        font-family: var(--font-sans);
       }
 
       .menu-item {
@@ -129,7 +122,6 @@
         color: rgba(255, 255, 255, 0.7);
         position: relative;
       }
-
       .menu-item a {
         color: rgba(255, 255, 255, 0.7);
       }
@@ -164,36 +156,44 @@
         margin-right: 10px;
       }
 
+      .menu-item.disabled,
+      .running .menu-item {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.55;
+        color: rgba(255, 255, 255, 0.55) !important;
+      }
+      .running .menu-item:hover {
+        background: none !important;
+        color: rgba(255, 255, 255, 0.55) !important;
+      }
+      .running .menu-item.active {
+        opacity: 0.75;
+        background: rgba(255, 255, 255, 0.1);
+        color: white !important;
+      }
+
       .sidebar-footer {
         padding: 10px 11px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
-
       .signal-block {
         background: rgba(0, 0, 0, 0.22);
         border-radius: 7px;
         padding: 7px 10px;
       }
-
       .signal-label {
         font-size: 0.55rem;
-
         color: rgba(255, 255, 255, 0.38);
-        text-transform: capitalize;
-        font-family: var(--font-sans);
         margin-bottom: 10px;
       }
-
       .signal-value {
-        font-family: var(--font-sans);
         font-size: 1.15rem;
         color: #fff;
         display: flex;
         align-items: center;
         gap: 6px;
-        margin-top: 1px;
       }
-
       .signal-dot {
         width: 6px;
         height: 6px;
@@ -201,7 +201,6 @@
         background: #4ade80;
         animation: blink 2s infinite;
       }
-
       @keyframes blink {
         0%,
         100% {
@@ -212,7 +211,6 @@
         }
       }
 
-      /* ══ MAIN ══ */
       main {
         flex: 1;
         display: flex;
@@ -222,7 +220,6 @@
         min-width: 0;
       }
 
-      /* ══ HEADER — now contains status pill ══ */
       header {
         height: 52px;
         background: var(--primary);
@@ -242,51 +239,42 @@
         align-items: center;
         gap: 10px;
       }
-
       .breadcrumb {
-        font-family: var(--font-sans);
         font-size: 1.05rem;
         font-weight: 600;
         letter-spacing: 1px;
       }
-
       .header-badge {
         background: rgba(255, 255, 255, 0.14);
         padding: 5px 8px;
         border-radius: 20px;
         font-size: 0.6rem;
-        font-family: var(--font-sans);
         letter-spacing: 1px;
       }
 
-      /* STATUS PILL — lives in header */
       .status-pill {
         display: flex;
         align-items: center;
         gap: 7px;
         padding: 5px 13px;
         border-radius: 30px;
-        font-family: var(--font-sans);
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 1.5px;
         transition: all 0.3s;
         flex-shrink: 0;
       }
-
       .status-pill.waiting {
         background: rgba(255, 255, 255, 0.15);
         border: 1.5px solid rgba(255, 220, 80, 0.55);
         color: #fde68a;
       }
-
       .status-pill.running {
         background: rgba(34, 197, 94, 0.18);
         border: 1.5px solid rgba(74, 222, 128, 0.6);
         color: #86efac;
         animation: pillPulse 2s ease-in-out infinite;
       }
-
       @keyframes pillPulse {
         0%,
         100% {
@@ -301,9 +289,7 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        flex-shrink: 0;
       }
-
       .status-pill.waiting .status-dot {
         background: #fbbf24;
         animation: blink 1.8s infinite;
@@ -319,14 +305,11 @@
         gap: 12px;
         margin-left: auto;
       }
-
       #liveTime {
-        font-family: var(--font-sans);
         font-size: 0.72rem;
         opacity: 0.78;
         letter-spacing: 0.7px;
       }
-
       .header-user {
         width: 28px;
         height: 28px;
@@ -339,7 +322,6 @@
         cursor: pointer;
       }
 
-      /* ══ METRICS BAR ══ */
       .metrics-bar {
         display: flex;
         gap: 1px;
@@ -347,7 +329,6 @@
         flex-shrink: 0;
         border-bottom: 1px solid var(--border);
       }
-
       .metric-item {
         flex: 1;
         background: var(--card);
@@ -357,12 +338,11 @@
         gap: 8px;
       }
       .metric-item:first-child {
-        border-radius: 10px 0px 0px 10px;
+        border-radius: 10px 0 0 10px;
       }
       .metric-item:last-child {
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0 10px 10px 0;
       }
-
       .metric-icon {
         width: 35px;
         height: 35px;
@@ -373,7 +353,6 @@
         font-size: 16px;
         flex-shrink: 0;
       }
-
       .ic-red {
         background: #fde8e8;
         color: var(--primary);
@@ -390,40 +369,27 @@
         background: #dbeafe;
         color: #1d4ed8;
       }
-
       .metric-label {
         font-size: 13px;
         margin-bottom: 6px;
-        text-transform: capitalize;
         color: var(--muted);
-        font-family: var(--font-sans);
       }
-
       .metric-val {
-        font-family: var(--font-sans);
         font-size: 0.95rem;
         font-weight: 500;
-        color: var(--text);
-        line-height: 1.1;
       }
 
-      /* ══ BODY CONTENT ══ */
       .content {
         flex: 1;
         display: flex;
         overflow: hidden;
-        min-height: 0;
       }
-
-      /* ══ CAMERA ══ */
       .camera-wrap {
         flex: 1;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        min-width: 0;
       }
-
       .camera-area {
         flex: 1;
         background: #080a0c;
@@ -433,14 +399,12 @@
         box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
         border: 1px solid #1c1e24;
       }
-
       #video {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: none;
       }
-
       .camera-placeholder {
         position: absolute;
         inset: 0;
@@ -455,7 +419,6 @@
         opacity: 0;
         pointer-events: none;
       }
-
       .cam-ring {
         width: 72px;
         height: 72px;
@@ -467,14 +430,12 @@
         font-size: 1.8rem;
         color: rgb(255 255 255 / 44%);
       }
-
       .cam-hint {
         color: rgb(255 255 255 / 44%);
         font-size: 0.74rem;
         text-align: center;
         line-height: 1.6;
       }
-
       .cam-overlay {
         position: absolute;
         inset: 0;
@@ -485,7 +446,6 @@
       .cam-overlay.visible {
         opacity: 1;
       }
-
       .scan-line {
         position: absolute;
         left: 0;
@@ -510,7 +470,6 @@
           top: 100%;
         }
       }
-
       .corner-tl,
       .corner-tr,
       .corner-bl,
@@ -541,7 +500,6 @@
         right: 12px;
         border-width: 0 2px 2px 0;
       }
-
       .cam-footer {
         position: absolute;
         bottom: 0;
@@ -553,23 +511,18 @@
         justify-content: space-between;
         align-items: flex-end;
       }
-
       .cam-tag {
-        font-family: var(--font-sans);
         font-size: 0.63rem;
         color: rgba(255, 255, 255, 0.62);
       }
-
       .live-badge {
         display: flex;
         align-items: center;
         gap: 5px;
-        font-family: var(--font-sans);
         font-size: 0.62rem;
         color: #f87171;
         letter-spacing: 1.5px;
       }
-
       .live-dot {
         width: 6px;
         height: 6px;
@@ -578,7 +531,6 @@
         animation: blink 1.4s infinite;
       }
 
-      /* ══ CONTROLS PANEL ══ */
       .controls-sidebar {
         width: 310px;
         flex-shrink: 0;
@@ -587,9 +539,7 @@
         display: flex;
         flex-direction: column;
         overflow-y: auto;
-        overflow-x: hidden;
       }
-
       .controls-sidebar::-webkit-scrollbar {
         width: 4px;
       }
@@ -603,17 +553,13 @@
         border-bottom: 1px solid var(--border);
         flex-shrink: 0;
       }
-
       .sec-lbl {
         font-size: 10px;
-
         text-transform: capitalize;
         color: #b0b8c4;
-        font-family: var(--font-sans);
         margin-bottom: 9px;
       }
 
-      /* ══ BIG START / STOP BUTTONS ══ */
       .btn-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -622,7 +568,7 @@
 
       .btn-main {
         border: none;
-        background-color: transparent;
+        background: transparent;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -630,69 +576,30 @@
         justify-content: center;
         gap: 6px;
         transition: all 0.18s;
-        font-family: var(--font-sans);
         font-weight: 700;
-
-        position: relative;
-        overflow: hidden;
       }
-
       .btn-main .btn-icon {
         font-size: 4rem;
         line-height: 1;
       }
-
       .btn-main .btn-label {
         font-size: 10px;
         font-weight: 800;
       }
-
-      .btn-main .btn-hint {
-        font-size: 0.6rem;
-        opacity: 0.75;
-        font-family: var(--font-sans);
-        font-weight: 400;
-        letter-spacing: 0.3px;
-      }
-
       .btn-start .btn-icon i {
         color: #16a34a;
-        background-color: transparent;
       }
-
       .btn-stop {
         color: #dc2626;
-        background-color: transparent;
       }
-
-      .btn-start:hover:not(:disabled) {
-        transform: translateY(-2px);
-        /* box-shadow: 0 6px 20px rgba(22, 163, 74, 0.5); */
-        filter: brightness(1.07);
-      }
+      .btn-start:hover:not(:disabled),
       .btn-stop:hover:not(:disabled) {
         transform: translateY(-2px);
-        /* box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5); */
         filter: brightness(1.07);
       }
-
-      .btn-start:active:not(:disabled),
-      .btn-stop:active:not(:disabled) {
-        transform: translateY(0);
-      }
-
       .btn-main:disabled {
         opacity: 0.3;
         cursor: not-allowed;
-        transform: none;
-        box-shadow: none;
-      }
-
-      /* ══ DROPDOWNS ══ */
-      .fields-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
       }
 
       .field {
@@ -701,107 +608,73 @@
         gap: 3px;
         margin-bottom: 10px;
       }
-
       .field label {
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 1.5px;
         text-transform: capitalize;
         color: var(--muted);
-        font-family: var(--font-sans);
         display: flex;
         align-items: center;
         gap: 5px;
-      }
-
-      .field label .field-icon {
-        color: var(--primary);
-        font-size: 0.7rem;
       }
       .req::after {
         content: " *";
         color: var(--primary);
       }
 
-      select {
-        padding: 7px 28px 7px 9px;
+      select,
+      input[type="text"] {
+        padding: 7px 9px;
         font-size: 0.82rem;
-        font-family: var(--font-sans);
         border: 1.5px solid var(--border);
         border-radius: 7px;
         background: white;
         color: var(--text);
-        cursor: pointer;
-        transition:
-          border-color 0.15s,
-          box-shadow 0.15s;
+        width: 100%;
+      }
+      select {
+        padding-right: 28px;
         appearance: none;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 8px center;
-        width: 100%;
       }
-
-      select:focus {
+      select:focus,
+      input[type="text"]:focus {
         outline: none;
         border-color: var(--primary);
         box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.1);
       }
-      select.filled {
+      select.filled,
+      input[type="text"].filled {
         border-color: var(--primary);
         background-color: var(--primary-xl);
       }
 
-      .two-col {
-        display: block;
-        gap: 8px;
+      .model-display {
+        background: var(--primary-xl);
+        color: var(--primary);
+        font-weight: 500;
+        cursor: default;
       }
 
-      /* ══ SESSION TABLE ══ */
-      .info-table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      .info-table td {
-        padding: 4px 0;
-        font-size: 0.76rem;
-        border-bottom: 1px solid #f1f3f5;
-      }
-      .info-table tr:last-child td {
-        border-bottom: none;
-      }
-      .info-table .k {
-        color: var(--muted);
-        width: 50%;
-      }
-      .info-table .v {
-        font-family: var(--font-sans);
-        font-size: 0.7rem;
-        color: var(--text);
-        text-align: right;
-      }
-
-      /* ══ ACTIONS ══ */
       .action-row {
         display: flex;
         gap: 7px;
       }
-
       .btn-sec {
         flex: 1;
         padding: 10px 0;
         font-size: 0.78rem;
         font-weight: 600;
-        font-family: var(--font-sans);
         border-radius: 7px;
         cursor: pointer;
-        transition: all 0.15s;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
       }
-
       .btn-ghost {
         background: white;
         color: var(--muted);
@@ -811,7 +684,6 @@
         background-color: var(--primary);
         color: var(--bg);
       }
-
       .btn-solid {
         background: var(--primary);
         color: white;
@@ -822,7 +694,6 @@
         color: var(--primary-d);
       }
 
-      /* ══ TOAST ══ */
       .toast {
         position: fixed;
         bottom: 14px;
@@ -846,8 +717,52 @@
         transform: translateY(0);
         opacity: 1;
       }
-      .toast i {
-        color: #4ade80;
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      .modal-content {
+        background: white;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 550px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+      .modal-header {
+        padding: 16px 20px;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .modal-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+      .modal-body {
+        padding: 24px 20px 20px;
+      }
+      .modal-footer {
+        padding: 16px 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
       }
       .mtb-10 {
         margin-top: 20px;
@@ -895,6 +810,7 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
+
     <aside>
       <div class="logo-area">
         <div class="logo_div">
@@ -904,9 +820,7 @@
       <div class="menu-section">
         <div class="menu-label">Navigation</div>
         <a href="index.html" rel="noopener noreferrer">
-          <div class="menu-item active">
-            <i class="fa-solid fa-house"></i> HOME
-          </div>
+          <div class="menu-item"><i class="fa-solid fa-house"></i> HOME</div>
         </a>
         <div class="menu-item">
           <i class="fa-solid fa-chart-simple"></i> REPORT
@@ -914,8 +828,8 @@
         <div class="menu-item">
           <i class="fa-solid fa-sliders"></i> CONTROLLER
         </div>
-        <a href="traning.html" rel="noopener noreferrer"
-          ><div class="menu-item">
+        <a href="traning.html" rel="noopener noreferrer">
+          <div class="menu-item active">
             <i class="fa-solid fa-microchip"></i> TRAINING
           </div>
         </a>
@@ -935,7 +849,7 @@
     <main>
       <header>
         <div class="header-left">
-          <span class="breadcrumb">Cone Inspection </span>
+          <span class="breadcrumb">Cone Inspection</span>
           <span class="header-badge">YARN INSPECTION</span>
         </div>
         <div id="statusPill" class="status-pill waiting">
@@ -960,8 +874,8 @@
             <div id="placeholder" class="camera-placeholder">
               <div class="cam-ring"><i class="fa-solid fa-camera"></i></div>
               <div class="cam-hint">
-                Fill in the settings on the right<br />
-                then press the green <strong>START</strong> button
+                Select settings in the modal<br />then press
+                <strong>START</strong>
               </div>
             </div>
             <div id="camOverlay" class="cam-overlay">
@@ -1021,7 +935,7 @@
           <div class="panel-sec">
             <div class="sec-lbl">Controls</div>
             <div class="btn-row">
-              <button id="btnStart" class="btn-main btn-start" disabled>
+              <button id="btnStart" class="btn-main btn-start">
                 <span class="btn-icon"
                   ><i class="fa-solid fa-circle-play"></i
                 ></span>
@@ -1037,93 +951,26 @@
           </div>
 
           <div class="panel-sec">
-            <div class="sec-lbl">
-              Step 1 — Choose your settings
-              <span style="color: var(--primary)">*</span>
+            <div class="sec-lbl">Optional settings</div>
+            <div class="field">
+              <label>Trained Model</label>
+              <select id="trainedModelSelect" class="model-display">
+                <option value="">— Select model in modal —</option>
+              </select>
             </div>
-            <div class="fields-grid">
-              <div class="field">
-                <label><span class="req">Material</span></label>
-                <select id="material">
-                  <option value="">— Pick a material —</option>
-                  <option>Cotton</option>
-                  <option>Polyester</option>
-                  <option>Blended</option>
-                </select>
-              </div>
-              <div
-                class="two-col"
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
-              >
-                <div class="field">
-                  <label><span class="req">Count</span></label>
-                  <select id="count">
-                    <option value="">— Pick —</option>
-                    <option>20s</option>
-                    <option>30s</option>
-                    <option>40s</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label><span class="req">Yarn</span></label>
-                  <select id="yarn">
-                    <option value="">— Pick —</option>
-                    <option>9-1</option>
-                    <option>10-1</option>
-                    <option>12-1</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel-sec">
-            <div class="sec-lbl">Step 2 — Optional settings</div>
             <div
-              class="two-col"
-              style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
+              style="margin-top: 8px; font-size: 0.75rem; color: var(--muted)"
             >
-              <div class="field">
-                <label>Good</label>
-                <select id="good">
-                  <option value="">—</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                </select>
-              </div>
-              <div class="field">
-                <label>Threshold</label>
-                <select id="threshold">
-                  <option value="">—</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                </select>
-              </div>
+              Model selection & addition is done in the start modal
             </div>
           </div>
 
           <div class="panel-sec">
-            <div class="action-row" style="display: flex; gap: 8px">
+            <div class="action-row">
               <button class="btn-sec btn-ghost" id="btnReset">
                 <i class="fa-solid fa-rotate-left"></i> Reset All
               </button>
-              <button class="btn-sec btn-solid" id="btnSave">
+              <button class="btn-sec btn-solid" id="btnSave" disabled>
                 <i class="fa-solid fa-floppy-disk"></i> Save Config
               </button>
             </div>
@@ -1131,6 +978,76 @@
         </div>
       </div>
     </main>
+
+    <!-- MODAL -->
+    <div id="startModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Inspection Settings</h3>
+          <button type="button" id="closeModal" class="close-btn">×</button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 18px">
+            Please select the required parameters before starting
+          </p>
+          <div class="fields-grid">
+            <div class="field">
+              <label><span class="req">Material</span></label>
+              <select id="modalMaterial">
+                <option value="">— Pick a material —</option>
+                <option>Cotton</option>
+                <option>Polyester</option>
+                <option>Blended</option>
+              </select>
+            </div>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
+            >
+              <div class="field">
+                <label><span class="req">Count</span></label>
+                <select id="modalCount">
+                  <option value="">— Pick —</option>
+                  <option>20s</option>
+                  <option>30s</option>
+                  <option>40s</option>
+                </select>
+              </div>
+              <div class="field">
+                <label><span class="req">Yarn</span></label>
+                <select id="modalYarn">
+                  <option value="">— Pick —</option>
+                  <option>9-1</option>
+                  <option>10-1</option>
+                  <option>12-1</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top: 20px">
+              <label>Trained Model</label>
+              <select id="modalTrainedSelect">
+                <option value="">— Select or add new —</option>
+              </select>
+            </div>
+
+            <div class="field" style="margin-top: 12px">
+              <label>Add new model</label>
+              <input
+                type="text"
+                id="newModelInput"
+                placeholder="Type new model name and press Enter..."
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="modalCancel" class="btn-sec btn-ghost">Cancel</button>
+          <button id="modalConfirm" class="btn-sec btn-solid" disabled>
+            Confirm & Start
+          </button>
+        </div>
+      </div>
+    </div>
 
     <div class="toast" id="toast">
       <i class="fa-solid fa-circle-check"></i>
@@ -1158,41 +1075,171 @@
         setTimeout(() => t.classList.remove("show"), 2800);
       }
 
-      const btnStart = document.getElementById("btnStart");
-      const btnStop = document.getElementById("btnStop");
+      // Elements
+      const body = document.body;
       const statusPill = document.getElementById("statusPill");
       const statusText = document.getElementById("statusText");
+      const btnStart = document.getElementById("btnStart");
+      const btnStop = document.getElementById("btnStop");
       const video = document.getElementById("video");
       const placeholder = document.getElementById("placeholder");
       const camOverlay = document.getElementById("camOverlay");
       const camTag = document.getElementById("camTag");
 
-      const selMaterial = document.getElementById("material");
-      const selCount = document.getElementById("count");
-      const selYarn = document.getElementById("yarn");
-      const reqFields = [selMaterial, selCount, selYarn];
+      const startModal = document.getElementById("startModal");
+      const modalMaterial = document.getElementById("modalMaterial");
+      const modalCount = document.getElementById("modalCount");
+      const modalYarn = document.getElementById("modalYarn");
+      const modalConfirm = document.getElementById("modalConfirm");
+      const modalCancel = document.getElementById("modalCancel");
+      const closeModalBtn = document.getElementById("closeModal");
 
-      let stream = null,
-        uptimeSec = 0,
-        uptimeTimer = null,
-        metricsTimer = null;
-      let inspected = 0,
-        defects = 0;
+      const modalTrainedSelect = document.getElementById("modalTrainedSelect");
+      const newModelInput = document.getElementById("newModelInput");
+      const sidebarTrainedSelect =
+        document.getElementById("trainedModelSelect");
 
-      function canStart() {
-        return reqFields.every((el) => el.value !== "") && btnStop.disabled;
+      let stream = null;
+      let uptimeSec = 0;
+      let uptimeTimer = null;
+      let metricsTimer = null;
+      let inspected = 0;
+      let defects = 0;
+      let modelList = [];
+
+      // Loader
+      window.addEventListener("load", () => {
+        setTimeout(
+          () => (document.getElementById("loaderDots").style.display = "none"),
+          1400,
+        );
+      });
+
+      // Modal logic
+      function modalCanStart() {
+        return modalMaterial.value && modalCount.value && modalYarn.value;
       }
 
-      function refreshStart() {
-        btnStart.disabled = !canStart();
+      function updateConfirmButton() {
+        modalConfirm.disabled = !modalCanStart();
       }
 
-      reqFields.forEach((el) => {
+      [modalMaterial, modalCount, modalYarn].forEach((el) => {
         el.addEventListener("change", () => {
-          el.classList.toggle("filled", el.value !== "");
-          refreshStart();
+          el.classList.toggle("filled", !!el.value);
+          updateConfirmButton();
         });
       });
+
+      function closeStartModal() {
+        startModal.style.display = "none";
+      }
+
+      startModal.onclick = (e) => {
+        if (e.target === startModal) closeStartModal();
+      };
+      closeModalBtn.onclick = closeStartModal;
+      modalCancel.onclick = closeStartModal;
+
+      btnStart.onclick = () => {
+        startModal.style.display = "flex";
+        updateConfirmButton();
+        syncModelsToModal();
+      };
+
+      function syncModelsToModal() {
+        modalTrainedSelect.innerHTML =
+          '<option value="">— Select or add new —</option>';
+        modelList.forEach((m) => {
+          const opt = document.createElement("option");
+          opt.value = m;
+          opt.textContent = m;
+          modalTrainedSelect.appendChild(opt);
+        });
+        // Try to keep previous selection
+        if (sidebarTrainedSelect.value) {
+          modalTrainedSelect.value = sidebarTrainedSelect.value;
+        }
+      }
+
+      // Add new model on Enter in modal
+      newModelInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const name = newModelInput.value.trim();
+          if (name && !modelList.includes(name)) {
+            modelList.push(name);
+            modelList.sort((a, b) => a.localeCompare(b));
+            localStorage.setItem(
+              "texa_trained_models",
+              JSON.stringify(modelList),
+            );
+
+            // Refresh BOTH dropdowns
+            syncModelsToModal();
+
+            const sidebarSelect = document.getElementById("trainedModelSelect");
+            sidebarSelect.innerHTML = modelList
+              .map((m) => `<option value="${m}">${m}</option>`)
+              .join("");
+            if (modelList.length > 0) {
+              sidebarSelect.value = name; // auto-select the new one
+            }
+
+            newModelInput.value = "";
+            showToast(`Model "${name}" added`, "fa-plus", "#16a34a");
+          }
+        }
+      });
+
+      function updateSidebarModelSelect() {
+        const select = document.getElementById("trainedModelSelect");
+        select.innerHTML =
+          '<option value="">— Select model in modal —</option>';
+        modelList.forEach((m) => {
+          const opt = document.createElement("option");
+          opt.value = m;
+          opt.textContent = m;
+          select.appendChild(opt);
+        });
+      }
+      // Confirm & Start → update sidebar
+      modalConfirm.onclick = () => {
+        if (!modalCanStart()) return;
+
+        const selectedModel = modalTrainedSelect.value;
+
+        // Update sidebar
+        if (selectedModel) {
+          sidebarTrainedSelect.innerHTML = `<option value="${selectedModel}" selected>${selectedModel}</option>`;
+          sidebarTrainedSelect.value = selectedModel;
+
+          // Force visual refresh
+          sidebarTrainedSelect.classList.remove("model-display");
+          void sidebarTrainedSelect.offsetWidth;
+          sidebarTrainedSelect.classList.add("model-display");
+        }
+
+        camTag.textContent = `${modalMaterial.value} · ${modalCount.value} · Yarn ${modalYarn.value}`;
+
+        closeStartModal();
+        body.classList.add("running");
+
+        btnStart.disabled = true;
+        btnStop.disabled = false;
+        statusPill.className = "status-pill running";
+        statusText.textContent = "RUNNING";
+
+        uptimeSec = 0;
+        uptimeTimer = setInterval(() => {
+          uptimeSec++;
+          document.getElementById("mUptime").textContent =
+            `${pad(Math.floor(uptimeSec / 60))}:${pad(uptimeSec % 60)}`;
+        }, 1000);
+
+        startMetrics();
+        startCam();
+      };
 
       async function startCam() {
         try {
@@ -1203,16 +1250,7 @@
           placeholder.classList.add("hidden");
           camOverlay.classList.add("visible");
         } catch (err) {
-          let msg = "Camera access failed.";
-          if (err.name === "NotAllowedError") {
-            msg =
-              "Camera permission denied.\nPlease allow access in browser settings.";
-          } else if (err.name === "NotFoundError") {
-            msg = "No camera found on this device.";
-          } else if (err.name === "NotReadableError") {
-            msg = "Camera is in use by another application.";
-          }
-          alert(msg + "\n\n" + err.name + " – " + err.message);
+          alert("Camera error: " + err.name);
         }
       }
 
@@ -1228,8 +1266,7 @@
       }
 
       function startMetrics() {
-        inspected = 0;
-        defects = 0;
+        inspected = defects = 0;
         metricsTimer = setInterval(() => {
           inspected += Math.floor(Math.random() * 4) + 1;
           if (Math.random() < 0.12) defects++;
@@ -1242,93 +1279,58 @@
         }, 900);
       }
 
-      btnStart.onclick = () => {
-        btnStart.disabled = true;
-        btnStop.disabled = false;
-        statusPill.className = "status-pill running";
-        statusText.textContent = "RUNNING";
-
-        camTag.textContent = `${selMaterial.value} · ${selCount.value} · Yarn ${selYarn.value}`;
-
-        uptimeSec = 0;
-        uptimeTimer = setInterval(() => {
-          uptimeSec++;
-          document.getElementById("mUptime").textContent =
-            `${pad(Math.floor(uptimeSec / 60))}:${pad(uptimeSec % 60)}`;
-        }, 1000);
-
-        startMetrics();
-        startCam();
-      };
-
       btnStop.onclick = () => {
+        body.classList.remove("running");
         btnStop.disabled = true;
-        btnStart.disabled = !canStart();
+        btnStart.disabled = false;
         statusPill.className = "status-pill waiting";
         statusText.textContent = "WAITING";
+
         clearInterval(uptimeTimer);
         clearInterval(metricsTimer);
         stopCam();
+
         document.getElementById("mInspected").textContent = "—";
         document.getElementById("mPassRate").textContent = "—";
         document.getElementById("mDefects").textContent = "—";
         document.getElementById("mUptime").textContent = "00:00";
       };
 
-      document.getElementById("btnReset").onclick = () => {
-        if (!btnStop.disabled) btnStop.onclick();
-        reqFields.forEach((el) => {
-          el.value = "";
-          el.classList.remove("filled");
-        });
-        document.getElementById("good").value = "";
-        document.getElementById("threshold").value = "";
-        refreshStart();
-        showToast("All settings cleared.", "fa-rotate-left", "#f59e0b");
-      };
-
-      document.getElementById("btnSave").onclick = () => {
-        localStorage.setItem(
-          "texa_cfg",
-          JSON.stringify({
-            material: selMaterial.value || null,
-            count: selCount.value || null,
-            yarn: selYarn.value || null,
-            good: document.getElementById("good").value || null,
-            threshold: document.getElementById("threshold").value || null,
-          }),
-        );
-        showToast("Configuration saved!");
-      };
-
-      // Load saved config
+      // Load saved models & last selection
       try {
-        const s = JSON.parse(localStorage.getItem("texa_cfg") || "{}");
-        if (s.material) {
-          selMaterial.value = s.material;
-          selMaterial.classList.add("filled");
+        const saved = localStorage.getItem("texa_trained_models");
+        if (saved) {
+          modelList = JSON.parse(saved);
         }
-        if (s.count) {
-          selCount.value = s.count;
-          selCount.classList.add("filled");
+        const lastModel = localStorage.getItem("texa_last_model");
+        if (lastModel && modelList.includes(lastModel)) {
+          sidebarTrainedSelect.innerHTML = `<option value="${lastModel}" selected>${lastModel}</option>`;
+          sidebarTrainedSelect.value = lastModel;
         }
-        if (s.yarn) {
-          selYarn.value = s.yarn;
-          selYarn.classList.add("filled");
-        }
-        if (s.good) document.getElementById("good").value = s.good;
-        if (s.threshold)
-          document.getElementById("threshold").value = s.threshold;
       } catch (e) {}
 
-      refreshStart();
-
-      window.addEventListener("load", () => {
-        setTimeout(
-          () => (document.getElementById("loaderDots").style.display = "none"),
-          1400,
-        );
+      // Save last selected model when confirmed
+      modalConfirm.addEventListener("click", () => {
+        const selected = modalTrainedSelect.value;
+        if (selected) {
+          localStorage.setItem("texa_last_model", selected);
+        }
       });
+
+      // Reset
+      document.getElementById("btnReset").onclick = () => {
+        if (!btnStop.disabled) btnStop.onclick();
+        if (confirm("Clear all saved trained models?")) {
+          modelList = [];
+          localStorage.removeItem("texa_trained_models");
+          localStorage.removeItem("texa_last_model");
+          sidebarTrainedSelect.innerHTML =
+            '<option value="">— Select model in modal —</option>';
+          showToast("Models and selection reset", "fa-rotate-left", "#f59e0b");
+        }
+      };
+
+      btnStart.disabled = false;
     </script>
   </body>
 </html>
