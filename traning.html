@@ -965,7 +965,7 @@
             </div>
           </div>
 
-          <div class="panel-sec">
+          <!-- <div class="panel-sec">
             <div class="action-row">
               <button class="btn-sec btn-ghost" id="btnReset">
                 <i class="fa-solid fa-rotate-left"></i> Reset All
@@ -974,7 +974,7 @@
                 <i class="fa-solid fa-floppy-disk"></i> Save Config
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </main>
@@ -1318,17 +1318,17 @@
       });
 
       // Reset
-      document.getElementById("btnReset").onclick = () => {
-        if (!btnStop.disabled) btnStop.onclick();
-        if (confirm("Clear all saved trained models?")) {
-          modelList = [];
-          localStorage.removeItem("texa_trained_models");
-          localStorage.removeItem("texa_last_model");
-          sidebarTrainedSelect.innerHTML =
-            '<option value="">— Select model in modal —</option>';
-          showToast("Models and selection reset", "fa-rotate-left", "#f59e0b");
-        }
-      };
+      // document.getElementById("btnReset").onclick = () => {
+      //   if (!btnStop.disabled) btnStop.onclick();
+      //   if (confirm("Clear all saved trained models?")) {
+      //     modelList = [];
+      //     localStorage.removeItem("texa_trained_models");
+      //     localStorage.removeItem("texa_last_model");
+      //     sidebarTrainedSelect.innerHTML =
+      //       '<option value="">— Select model in modal —</option>';
+      //     showToast("Models and selection reset", "fa-rotate-left", "#f59e0b");
+      //   }
+      // };
 
       btnStart.disabled = false;
     </script>

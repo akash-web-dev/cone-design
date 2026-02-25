@@ -580,7 +580,7 @@
 
       /* ══ CONTROLS PANEL ══ */
       .controls-sidebar {
-        width: 310px;
+        width: 320px;
         flex-shrink: 0;
         background: var(--card);
         border-left: 1px solid var(--border);
@@ -783,10 +783,22 @@
 
       /* ══ ACTIONS ══ */
       .action-row {
-        display: flex;
-        gap: 7px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
       }
-
+      .action-row div {
+        margin-bottom: 20px;
+        margin-right: 5px;
+      }
+      .cone-label {
+        display: block;
+        font-size: 12px; /* small */
+        color: #777;
+        margin-bottom: 2px;
+      }
+      .cone-box {
+        text-align: center;
+      }
       .btn-sec {
         flex: 1;
         padding: 10px 0;
@@ -1119,13 +1131,26 @@
           </div>
 
           <div class="panel-sec">
-            <div class="action-row" style="display: flex; gap: 8px">
-              <button class="btn-sec btn-ghost" id="btnReset">
-                <i class="fa-solid fa-rotate-left"></i> Reset All
-              </button>
-              <button class="btn-sec btn-solid" id="btnSave">
-                <i class="fa-solid fa-floppy-disk"></i> Save Config
-              </button>
+            <div class="action-row">
+              <div class="cone-box">
+                <span class="cone-label">1st</span>
+                <p>cone status: <strong class="coneStatus">Good</strong></p>
+              </div>
+
+              <div class="cone-box">
+                <span class="cone-label">2nd</span>
+                <p>cone status: <strong class="coneStatus">Defect</strong></p>
+              </div>
+
+              <div class="cone-box">
+                <span class="cone-label">3rd</span>
+                <p>cone status: <strong class="coneStatus">No cone</strong></p>
+              </div>
+
+              <div class="cone-box">
+                <span class="cone-label">4th</span>
+                <p>cone status: <strong class="coneStatus">No cone</strong></p>
+              </div>
             </div>
           </div>
         </div>
@@ -1273,32 +1298,6 @@
         document.getElementById("mPassRate").textContent = "—";
         document.getElementById("mDefects").textContent = "—";
         document.getElementById("mUptime").textContent = "00:00";
-      };
-
-      document.getElementById("btnReset").onclick = () => {
-        if (!btnStop.disabled) btnStop.onclick();
-        reqFields.forEach((el) => {
-          el.value = "";
-          el.classList.remove("filled");
-        });
-        document.getElementById("good").value = "";
-        document.getElementById("threshold").value = "";
-        refreshStart();
-        showToast("All settings cleared.", "fa-rotate-left", "#f59e0b");
-      };
-
-      document.getElementById("btnSave").onclick = () => {
-        localStorage.setItem(
-          "texa_cfg",
-          JSON.stringify({
-            material: selMaterial.value || null,
-            count: selCount.value || null,
-            yarn: selYarn.value || null,
-            good: document.getElementById("good").value || null,
-            threshold: document.getElementById("threshold").value || null,
-          }),
-        );
-        showToast("Configuration saved!");
       };
 
       // Load saved config
